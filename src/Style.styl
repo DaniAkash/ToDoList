@@ -1,20 +1,45 @@
 .App
-  text-align center
-
-.App-logo
-  animation App-logo-spin infinite 20s linear
-  height 80px
+  display flex
+  flex-direction column
 
 .App-header
-  background-color #222
-  height 150px
-  padding 20px
+  display flex
+  flex-direction row
+  justify-content center
+  background-color black
   color white
 
-.App-intro
-  font-size large
+.App-body
+  display flex
+  flex-direction column
+  align-items center
+  background-color yellow
 
+  .user-name-area
+    display flex
+    align-items center
+    padding-top 50px
+    padding-bottom 20px
 
-@keyframes App-logo-spin
-  from  transform rotate(0deg)
-  to  transform rotate(360deg)
+    .user-name-input
+      padding-left 30px
+      font-family Arial, FontAwesome
+      font-size 25px
+      border 0
+      height 50px
+      width 400px
+      border-top-left-radius 35px
+      border-bottom-left-radius 35px
+
+    .user-name-submit
+      height 52px
+      width 50px
+      font-family Arial, FontAwesome
+      font-size 25px
+      color white
+      border-top-right-radius 35px
+      border-bottom-right-radius 35px
+      border 0
+
+*:focus
+  outline none

@@ -8,8 +8,16 @@
     "stylus": "^0.54.5"
   },
   "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.1.1",
     "react": "^15.4.1",
-    "react-dom": "^15.4.1"
+    "react-dom": "^15.4.1",
+    "react-redux": "^4.4.6",
+    "react-router": "^2.8.1",
+    "redux": "^3.6.0",
+    "redux-immutable-state-invariant": "^1.2.4",
+    "toastr": "^2.1.2"
   },
   "scripts": {
     "start": "concurrently \"stylus -w src/Style.styl -o src/App.css\" \"react-scripts start\"",
