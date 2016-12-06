@@ -12,12 +12,11 @@
 .App-body
   display flex
   flex-direction column
-  align-items center
+  align-items stretch
   background-color yellow
 
   .user-name-area
-    display flex
-    align-items center
+    align-self center
     padding-top 50px
     padding-bottom 20px
 
@@ -27,7 +26,7 @@
       font-size 25px
       border 0
       height 50px
-      width 400px
+      width 600px
       border-top-left-radius 35px
       border-bottom-left-radius 35px
 
@@ -40,6 +39,29 @@
       border-top-right-radius 35px
       border-bottom-right-radius 35px
       border 0
+
+  .tasks-area
+    display flex
+    flex-direction column
+    justify-content space-around
+    align-items stretch
+    padding 50px 0px 50px
+    background-color blue
+    border 5px solid red
+
+    .tasks-header
+      padding 15px 30px
+      align-self center
+      border 1px solid black
+
+    .tasks
+      align-self center
+      border 1px solid black
+      width 800px
+      display flex
+      flex-display row
+      justify-content space-around
+      align-items center
 
 *:focus
   outline none
