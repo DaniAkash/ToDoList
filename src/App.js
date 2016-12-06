@@ -21,6 +21,16 @@ class App extends Component {
               className="Btn user-name-submit">&#xf0c7;</button>
           </div>
           <div className="tasks-area">
+            <div className="add-new-task-div">
+              <input
+                type="text"
+                className="add-new-task-input"
+                placeholder="Add New Task"
+              />
+              <button
+                type="submit"
+                className="add-new-task-submit">&#xf067;</button>
+            </div>
             <div className="tasks-header">All | Pending | Completed</div>
             <div className="tasks">
               <div className="tasks-checkbox-div">
