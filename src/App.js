@@ -37,36 +37,24 @@ class App extends Component {
                 <input type="checkbox" value="1" id="tasksCheckBox1" name="" />
                 <label htmlFor="tasksCheckBox1"></label>
               </div>
-              <textarea type="text" value="Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 " className="task-text" />
-              <select className="tasks-priority">
-                <option value="high">High</option>
-                <option value="med">Medium</option>
-                <option value="low">Low</option>
-              </select>
+              <textarea type="text" value="Task 2 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 3  Task 3 Task 3 Task 3 Task 3" className="task-text" />
+              <span className="tasks-delete">&#xf00d;</span>
             </div>
             <div className="tasks">
               <div className="tasks-checkbox-div">
                 <input type="checkbox" value="1" id="tasksCheckBox2" name="" />
                 <label htmlFor="tasksCheckBox2"></label>
               </div>
-              <textarea type="text" value="Task 2" className="task-text" />
-              <select className="tasks-priority">
-                <option value="high">High</option>
-                <option value="med">Medium</option>
-                <option value="low">Low</option>
-              </select>
+              <p className="task-text">Task 2</p>
+              <span className="tasks-delete">&#xf00d;</span>
             </div>
-            <div className="tasks">
+            <div className="tasks complete">
               <div className="tasks-checkbox-div">
-                <input type="checkbox" value="1" id="tasksCheckBox3" name="" />
+                <input type="checkbox" checked="true" value="1" id="tasksCheckBox3" name="" />
                 <label htmlFor="tasksCheckBox3"></label>
               </div>
               <p className="task-text">Task 3</p>
-              <select className="tasks-priority">
-                <option value="high">High</option>
-                <option value="med">Medium</option>
-                <option value="low">Low</option>
-              </select>
+              <span className="tasks-delete">&#xf00d;</span>
             </div>
           </div>
         </div>
