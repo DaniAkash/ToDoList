@@ -48,12 +48,10 @@
     align-items stretch
     padding 50px 0px 50px
     background-color blue
-    border 5px solid red
 
     .tasks-header
       padding 15px 30px
       align-self center
-      border 1px solid black
       margin-bottom 30px
 
     .tasks
@@ -62,12 +60,46 @@
       width 800px
       margin-bottom 15px
       display flex
-      flex-display row
+      flex-direction row
       justify-content space-between
       align-items center
 
-      .tasks-checkbox
-        height 40px
+      .tasks-checkbox-div:before
+        content ''
+        position absolute
+        top 10px
+        left 10px
+        height 2px
+        width 30px
+        background #111
+
+      .tasks-checkbox-div
+        align-self center
+        width 50px
+        height 20px
+        background #333
+        border-radius 40px
+        position relative
+
+        label
+          display block
+          background #ddd
+          width 12px
+          height 12px
+          border-radius 50%
+          cursor pointer
+          position absolute
+          top 4px
+          left 4px
+          z-index 1
+          transition all .5s ease
+
+        input
+          display none
+
+        input[type=checkbox]:checked + label
+          left: 32px;
+          background: #26ca28;
 
       .task-text
         align-self flex-start

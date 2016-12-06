@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../node_modules/font-awesome/css/font-awesome.min.css';
-import './App.css';
+import '../public/App.css';
 
 class App extends Component {
   render() {
@@ -23,10 +23,10 @@ class App extends Component {
           <div className="tasks-area">
             <div className="tasks-header">All | Pending | Completed</div>
             <div className="tasks">
-              <input
-                type="checkbox"
-                className="tasks-checkbox"
-              />
+              <div className="tasks-checkbox-div">
+                <input type="checkbox" value="1" id="tasksCheckBox1" name="" />
+                <label htmlFor="tasksCheckBox1"></label>
+              </div>
               <p className="task-text">Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 </p>
               <select className="tasks-priority">
                 <option value="high">High</option>
@@ -35,10 +35,10 @@ class App extends Component {
               </select>
             </div>
             <div className="tasks">
-              <input
-                type="checkbox"
-                className="tasks-checkbox"
-              />
+              <div className="tasks-checkbox-div">
+                <input type="checkbox" value="1" id="tasksCheckBox2" name="" />
+                <label htmlFor="tasksCheckBox2"></label>
+              </div>
               <p className="task-text">Task 2</p>
               <select className="tasks-priority">
                 <option value="high">High</option>
@@ -47,10 +47,10 @@ class App extends Component {
               </select>
             </div>
             <div className="tasks">
-              <input
-                type="checkbox"
-                className="tasks-checkbox"
-              />
+              <div className="tasks-checkbox-div">
+                <input type="checkbox" value="1" id="tasksCheckBox3" name="" />
+                <label htmlFor="tasksCheckBox3"></label>
+              </div>
               <p className="task-text">Task 3</p>
               <select className="tasks-priority">
                 <option value="high">High</option>

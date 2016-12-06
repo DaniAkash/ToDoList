@@ -14,4 +14,5 @@ build
 .env
 npm-debug.log
 src/App.css
+public/App.css
 .eslintrc.json
