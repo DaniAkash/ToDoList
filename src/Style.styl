@@ -19,6 +19,7 @@
     align-self center
     padding-top 50px
     padding-bottom 20px
+    display flex
 
     .user-name-input
       padding-left 30px
@@ -53,15 +54,29 @@
       padding 15px 30px
       align-self center
       border 1px solid black
+      margin-bottom 30px
 
     .tasks
       align-self center
       border 1px solid black
       width 800px
+      margin-bottom 15px
       display flex
       flex-display row
-      justify-content space-around
+      justify-content space-between
       align-items center
+
+      .tasks-checkbox
+        height 40px
+
+      .task-text
+        align-self flex-start
+        max-width 600px
+        min-width 600px
+        background-color green
+
+      .tasks-priority
+        max-width 200px
 
 *:focus
   outline none

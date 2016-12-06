@@ -27,7 +27,7 @@ class App extends Component {
                 type="checkbox"
                 className="tasks-checkbox"
               />
-              <p>Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 </p>
+              <p className="task-text">Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 </p>
               <select className="tasks-priority">
                 <option value="high">High</option>
                 <option value="med">Medium</option>
@@ -39,7 +39,7 @@ class App extends Component {
                 type="checkbox"
                 className="tasks-checkbox"
               />
-              <p>Task 2</p>
+              <p className="task-text">Task 2</p>
               <select className="tasks-priority">
                 <option value="high">High</option>
                 <option value="med">Medium</option>
@@ -51,7 +51,7 @@ class App extends Component {
                 type="checkbox"
                 className="tasks-checkbox"
               />
-              <p>Task 3</p>
+              <p className="task-text">Task 3</p>
               <select className="tasks-priority">
                 <option value="high">High</option>
                 <option value="med">Medium</option>
