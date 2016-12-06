@@ -27,7 +27,7 @@ class App extends Component {
                 <input type="checkbox" value="1" id="tasksCheckBox1" name="" />
                 <label htmlFor="tasksCheckBox1"></label>
               </div>
-              <p className="task-text">Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 </p>
+              <textarea type="text" value="Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 Task 1 " className="task-text" />
               <select className="tasks-priority">
                 <option value="high">High</option>
                 <option value="med">Medium</option>
@@ -39,7 +39,7 @@ class App extends Component {
                 <input type="checkbox" value="1" id="tasksCheckBox2" name="" />
                 <label htmlFor="tasksCheckBox2"></label>
               </div>
-              <p className="task-text">Task 2</p>
+              <textarea type="text" value="Task 2" className="task-text" />
               <select className="tasks-priority">
                 <option value="high">High</option>
                 <option value="med">Medium</option>

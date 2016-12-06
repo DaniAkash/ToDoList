@@ -1,3 +1,6 @@
+html
+  background-color #DCEDC8
+
 .App
   display flex
   flex-direction column
@@ -6,14 +9,14 @@
   display flex
   flex-direction row
   justify-content center
-  background-color black
+  background-color #333
   color white
 
 .App-body
   display flex
   flex-direction column
   align-items stretch
-  background-color yellow
+  // background-color yellow
 
   .user-name-area
     align-self center
@@ -25,21 +28,40 @@
       padding-left 30px
       font-family Arial, FontAwesome
       font-size 25px
+      background-color #333
+      color white
       border 0
       height 50px
       width 600px
       border-top-left-radius 35px
       border-bottom-left-radius 35px
 
+    .user-name-input::-webkit-input-placeholder
+      color white
+
+    .user-name-input::-moz-placeholder
+      color white
+
+    .user-name-input:-ms-input-placeholder
+      color white
+
     .user-name-submit
       height 52px
       width 50px
       font-family Arial, FontAwesome
       font-size 25px
+      cursor pointer
       color white
+      background-color #333
       border-top-right-radius 35px
       border-bottom-right-radius 35px
       border 0
+
+    .user-name-submit:hover
+      color #26ca28
+
+    .user-name-submit:active
+      color #9CCC65
 
   .tasks-area
     display flex
@@ -47,7 +69,7 @@
     justify-content space-around
     align-items stretch
     padding 50px 0px 50px
-    background-color blue
+    // background-color blue
 
     .tasks-header
       padding 15px 30px
@@ -63,6 +85,14 @@
       flex-direction row
       justify-content space-between
       align-items center
+
+      textarea.task-text
+        padding-top 2.5px
+        padding-bottom 2.5px
+        margin-top 10px
+        margin-bottom 10px
+        border 0px
+        resize none
 
       .tasks-checkbox-div:before
         content ''
@@ -98,8 +128,8 @@
           display none
 
         input[type=checkbox]:checked + label
-          left: 32px;
-          background: #26ca28;
+          left 32px
+          background #26ca28
 
       .task-text
         align-self flex-start
