@@ -1,23 +1,16 @@
 import React, { Component } from 'react';
 
+import Header from './components/Header';
+import NavigationBar from './components/NavigationBar';
+import UserNameInput from './components/UserNameInput';
+
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <h2>Hi! Welcome to Todo List App!!</h2>
-        </div>
+        <Header />
         <div className="App-body">
-          <div className="user-name-area">
-            <input
-              className="user-name-input"
-              type="text"
-              placeholder="&#xf21d; Please enter your name to continue..."
-            />
-            <button
-              type="submit"
-              className="Btn user-name-submit">&#xf0c7;</button>
-          </div>
+          <UserNameInput />
           <div className="tasks-area">
             <div className="add-new-task-div">
               <input
@@ -29,7 +22,7 @@ class App extends Component {
                 type="submit"
                 className="add-new-task-submit">&#xf067;</button>
             </div>
-            <div className="tasks-header"><a href="#" className="active">All</a> | <a href="#">Pending</a> | <a href="#">Completed</a></div>
+            <NavigationBar />
             <div className="tasks">
               <div className="tasks-checkbox-div">
                 <input type="checkbox" value="1" id="tasksCheckBox1" name="" />
