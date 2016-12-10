@@ -29,7 +29,7 @@ class App extends Component {
                 type="submit"
                 className="add-new-task-submit">&#xf067;</button>
             </div>
-            <div className="tasks-header">All | Pending | Completed</div>
+            <div className="tasks-header"><a href="#" className="active">All</a> | <a href="#">Pending</a> | <a href="#">Completed</a></div>
             <div className="tasks">
               <div className="tasks-checkbox-div">
                 <input type="checkbox" value="1" id="tasksCheckBox1" name="" />
