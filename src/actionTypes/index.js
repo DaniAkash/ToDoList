@@ -1,0 +1,1 @@
+export const ENTER_NAME = "ENTER_NAME";
