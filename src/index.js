@@ -1,10 +1,13 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {render} from 'react-dom';
+import {Router, browserHistory} from 'react-router';
+
 import App from './App';
+import routes from './routes';
 import '../node_modules/font-awesome/css/font-awesome.min.css';
 import '../public/App.css';
 
-ReactDOM.render(
-  <App />,
+render(
+  <Router history={browserHistory} routes={routes} />,
   document.getElementById('root')
 );
