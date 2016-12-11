@@ -14,7 +14,7 @@ class HomePage extends Component {
     super(props, context);
 
     this.state = {
-      inputText: this.props.inputText
+      inputText: this.props.inputText,
     };
     this.onTextInput = this.onTextInput.bind(this);
     this.onClickSave = this.onClickSave.bind(this);
@@ -38,6 +38,11 @@ class HomePage extends Component {
 
   componentWillMount() {
     if(this.props.userName !== "") this.context.router.replace('/tasks');
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if(this.props.userName !== nextProps.userName && nextProps.userName !== "")
+      this.context.router.replace('/tasks');
   }
 
   render() {
