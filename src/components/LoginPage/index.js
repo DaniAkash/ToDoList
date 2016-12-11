@@ -9,7 +9,7 @@ import toastr from 'toastr';
 import UserNameInput from '../UserNameInput';
 import * as UserActions from '../../actions/user';
 
-class HomePage extends Component {
+class LoginPage extends Component {
   constructor(props, context) {
     super(props, context);
 
@@ -24,7 +24,7 @@ class HomePage extends Component {
   setUserName() {
     this.props.actions.setUserName(this.state.inputText);
     toastr.success('Logged In');
-    this.context.router.push('/tasks');
+    this.context.router.push('/');
   }
 
   onTextInput(event) {
@@ -37,12 +37,12 @@ class HomePage extends Component {
   }
 
   componentWillMount() {
-    if(this.props.userName !== "") this.context.router.replace('/tasks');
+    if(this.props.userName !== "") this.context.router.replace('/');
   }
 
   componentWillReceiveProps(nextProps) {
     if(this.props.userName !== nextProps.userName && nextProps.userName !== "")
-      this.context.router.replace('/tasks');
+      this.context.router.replace('/');
   }
 
   render() {
@@ -58,12 +58,12 @@ class HomePage extends Component {
   }
 }
 
-HomePage.propTypes = {
+LoginPage.propTypes = {
   userName: PropTypes.string.isRequired,
   inputText: PropTypes.string.isRequired
 };
 
-HomePage.contextTypes = {
+LoginPage.contextTypes = {
   router: PropTypes.object.isRequired
 };
 
@@ -80,4 +80,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
+export default connect(mapStateToProps, mapDispatchToProps)(LoginPage);

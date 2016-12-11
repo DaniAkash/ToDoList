@@ -6,3 +6,9 @@ export function setUserName(name) {
     name
   };
 }
+
+export function logout() {
+  return {
+    type: actions.LOG_OUT
+  };
+}

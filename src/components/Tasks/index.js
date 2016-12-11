@@ -1,8 +1,25 @@
-import React, {Component} from 'react';
+import React, {
+  Component,
+  PropTypes
+} from 'react';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
 
 import NavigationBar from '../NavigationBar';
+import * as UserActions from '../../actions/user';
 
 class Tasks extends Component{
+  constructor(props, context) {
+    super(props, context);
+
+    if(this.props.userName === "") this.context.router.replace('/login');
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if(this.props.userName !== nextProps.userName && nextProps.userName === "")
+      this.context.router.push('/login');
+  }
+
   render() {
     return (
       <div className="App-body">
@@ -48,4 +65,25 @@ class Tasks extends Component{
   }
 }
 
-export default Tasks;
+Tasks.propTypes = {
+  userName: PropTypes.string.isRequired,
+  userActions: PropTypes.object.isRequired
+};
+
+Tasks.contextTypes = {
+  router: PropTypes.object.isRequired
+};
+
+function mapStateToProps(state, ownProps) {
+  return {
+    userName: state.userName
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    userActions: bindActionCreators(UserActions, dispatch)
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Tasks);

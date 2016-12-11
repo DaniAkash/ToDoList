@@ -6,8 +6,10 @@ const user = (state = initialState.userName, action) => {
     case actions.ENTER_NAME:
       return action.name;
 
+    case actions.LOG_OUT:
+      return "";
+
     case 'persist/REHYDRATE':
-      console.log(action.payload.userName);
       return action.payload.userName;
 
     default:
