@@ -4,6 +4,7 @@ import React, {
 } from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
+import toastr from 'toastr';
 
 import UserNameInput from '../UserNameInput';
 import * as UserActions from '../../actions/user';
@@ -17,15 +18,26 @@ class HomePage extends Component {
     };
     this.onTextInput = this.onTextInput.bind(this);
     this.onClickSave = this.onClickSave.bind(this);
+    this.setUserName = this.setUserName.bind(this);
+  }
+
+  setUserName() {
+    this.props.actions.setUserName(this.state.inputText);
+    toastr.success('Logged In');
+    this.context.router.push('/tasks');
   }
 
   onTextInput(event) {
-    if(event.key === 'Enter') this.props.actions.setUserName(this.state.inputText);
+    if(event.key === 'Enter') this.setUserName();
     else this.setState({inputText: event.target.value});
   }
 
   onClickSave() {
-    this.props.actions.setUserName(this.state.inputText);
+    this.setUserName();
+  }
+
+  componentWillMount() {
+    if(this.props.userName !== "") this.context.router.replace('/tasks');
   }
 
   render() {
@@ -44,6 +56,10 @@ class HomePage extends Component {
 HomePage.propTypes = {
   userName: PropTypes.string.isRequired,
   inputText: PropTypes.string.isRequired
+};
+
+HomePage.contextTypes = {
+  router: PropTypes.object.isRequired
 };
 
 function mapStateToProps(state, ownProps) {
