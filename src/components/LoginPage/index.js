@@ -6,7 +6,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import toastr from 'toastr';
 
-import UserNameInput from '../UserNameInput';
+import UserNameInput from './UserNameInput';
 import * as UserActions from '../../actions/user';
 
 class LoginPage extends Component {

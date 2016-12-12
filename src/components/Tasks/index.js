@@ -5,7 +5,7 @@ import React, {
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 
-import NavigationBar from '../NavigationBar';
+import NavigationBar from '../Common/NavigationBar';
 import * as UserActions from '../../actions/user';
 
 class Tasks extends Component{

@@ -4,8 +4,9 @@ import React, {
 } from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
+import toastr from 'toastr';
 
-import Header from './components/Header';
+import Header from './components/Common/Header';
 import * as UserActions from './actions/user';
 
 class App extends Component {
@@ -17,6 +18,7 @@ class App extends Component {
 
   logout() {
     this.props.actions.logout();
+    toastr.success('Logged Out');
   }
 
   render() {
