@@ -14,7 +14,7 @@ class LoginPage extends Component {
     super(props, context);
 
     this.state = {
-      inputText: this.props.inputText,
+      inputText: ''
     };
     this.onTextInput = this.onTextInput.bind(this);
     this.onClickSave = this.onClickSave.bind(this);
@@ -46,7 +46,6 @@ class LoginPage extends Component {
   }
 
   render() {
-    console.log('here' + this.props.userName);
     return (
       <div className="App-body">
         <UserNameInput
@@ -59,8 +58,7 @@ class LoginPage extends Component {
 }
 
 LoginPage.propTypes = {
-  userName: PropTypes.string.isRequired,
-  inputText: PropTypes.string.isRequired
+  userName: PropTypes.string.isRequired
 };
 
 LoginPage.contextTypes = {
@@ -69,8 +67,7 @@ LoginPage.contextTypes = {
 
 function mapStateToProps(state, ownProps) {
   return {
-    userName: state.userName,
-    inputText: ''
+    userName: state.userName
   };
 }
 
