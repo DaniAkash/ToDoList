@@ -4,6 +4,7 @@ import React, {
 } from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
+import * as Cookies from "js-cookie";
 
 import NavigationBar from '../Common/NavigationBar';
 import * as UserActions from '../../actions/user';
@@ -22,7 +23,7 @@ class Tasks extends Component{
   }
 
   componentWillMount() {
-    if(this.props.userName === "") this.context.router.replace('/login');
+    if(!Cookies.get('name')) this.context.router.replace('/login');
   }
 
   render() {

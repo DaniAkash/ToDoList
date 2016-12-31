@@ -5,6 +5,7 @@ import React, {
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import toastr from 'toastr';
+import * as Cookies from "js-cookie";
 
 import UserNameInput from './UserNameInput';
 import * as UserActions from '../../actions/user';
@@ -13,6 +14,7 @@ class LoginPage extends Component {
   constructor(props, context) {
     super(props, context);
 
+    if(Cookies.get('name')) this.context.router.replace('/');
     this.state = {
       inputText: ''
     };
@@ -23,6 +25,7 @@ class LoginPage extends Component {
 
   setUserName() {
     this.props.actions.setUserName(this.state.inputText);
+    Cookies.set('name', this.state.inputText);
     toastr.success('Logged In');
     this.context.router.push('/');
   }
@@ -34,10 +37,6 @@ class LoginPage extends Component {
 
   onClickSave() {
     this.setUserName();
-  }
-
-  componentWillMount() {
-    if(this.props.userName !== "") this.context.router.replace('/');
   }
 
   componentWillReceiveProps(nextProps) {

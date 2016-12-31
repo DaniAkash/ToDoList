@@ -5,6 +5,7 @@ import React, {
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import toastr from 'toastr';
+import * as Cookies from "js-cookie";
 
 import Header from './components/Common/Header';
 import * as UserActions from './actions/user';
@@ -18,6 +19,7 @@ class App extends Component {
 
   logout() {
     this.props.actions.logout();
+    Cookies.remove('name');
     toastr.success('Logged Out');
   }
 
