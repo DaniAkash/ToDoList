@@ -1,3 +1,10 @@
 export default {
-  userName: ''
+  userName: '',
+  tasks: [
+    // {
+    //   id: '',
+    //   task: '',
+    //   status: '',
+    // },
+  ],
 };
