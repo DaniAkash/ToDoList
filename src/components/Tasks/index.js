@@ -7,15 +7,22 @@ import {bindActionCreators} from 'redux';
 import * as Cookies from "js-cookie";
 
 import NavigationBar from '../Common/NavigationBar';
-import * as UserActions from '../../actions/user';
+import * as taskActions from '../../actions/tasks';
 import AddTask from './AddTask';
 import Task from './Task';
 
 class Tasks extends Component{
-  // constructor(props, context) {
-  //   super(props, context);
+  constructor(props, context) {
+    super(props, context);
 
-  // }
+    this.state = {
+      newTask: ""
+    };
+
+    this.addTask = this.addTask.bind(this);
+    this.onTextInput = this.onTextInput.bind(this);
+    this.onClickSave = this.onClickSave.bind(this);
+  }
 
   componentWillReceiveProps(nextProps) {
     if(this.props.userName !== nextProps.userName && nextProps.userName === "")
@@ -26,11 +33,25 @@ class Tasks extends Component{
     if(!Cookies.get('name')) this.context.router.replace('/login');
   }
 
+  addTask() {
+    this.props.taskActions.addTask(this.state.newTask);
+    document.getElementById('add-new-task').value = "";
+  }
+
+  onTextInput(event) {
+    if(event.key === 'Enter') this.addTask();
+    else this.setState({newTask: event.target.value});
+  }
+
+  onClickSave() {
+    this.addTask();
+  }
+
   render() {
     return (
       <div className="App-body">
         <div className="tasks-area">
-          <AddTask />
+          <AddTask onClickSave={this.onClickSave} onTextInput={this.onTextInput} />
           <NavigationBar />
           <Task />
           <div className="tasks">
@@ -57,7 +78,7 @@ class Tasks extends Component{
 
 Tasks.propTypes = {
   userName: PropTypes.string.isRequired,
-  userActions: PropTypes.object.isRequired
+  taskActions: PropTypes.object.isRequired
 };
 
 Tasks.contextTypes = {
@@ -65,6 +86,7 @@ Tasks.contextTypes = {
 };
 
 function mapStateToProps(state, ownProps) {
+  console.log(state.tasks);
   return {
     userName: state.userName
   };
@@ -72,7 +94,7 @@ function mapStateToProps(state, ownProps) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    userActions: bindActionCreators(UserActions, dispatch)
+    taskActions: bindActionCreators(taskActions, dispatch)
   };
 }
 
