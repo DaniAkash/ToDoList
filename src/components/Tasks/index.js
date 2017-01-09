@@ -2,6 +2,7 @@ import React, {
   Component,
   PropTypes
 } from 'react';
+import {List} from 'immutable';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as Cookies from "js-cookie";
@@ -53,8 +54,13 @@ class Tasks extends Component{
         <div className="tasks-area">
           <AddTask onClickSave={this.onClickSave} onTextInput={this.onTextInput} />
           <NavigationBar />
-          <Task />
-          <div className="tasks">
+          {
+            this.props.tasks.map(task => {
+              task = task.toObject();
+              return <Task key={task.id} task={task} />;
+            })
+          }
+          {/*<div className="tasks">
             <div className="tasks-checkbox-div">
               <input type="checkbox" value="1" id="tasksCheckBox2" name="" />
               <label htmlFor="tasksCheckBox2"></label>
@@ -69,7 +75,7 @@ class Tasks extends Component{
             </div>
             <p className="task-text">Task 3</p>
             <span className="tasks-delete">&#xf00d;</span>
-          </div>
+          </div>*/}
         </div>
       </div>
     );
@@ -86,9 +92,10 @@ Tasks.contextTypes = {
 };
 
 function mapStateToProps(state, ownProps) {
-  console.log(state.tasks);
+  let tasks = (List.isList(state.tasks))? state.tasks.toArray():[];
   return {
-    userName: state.userName
+    userName: state.userName,
+    tasks,
   };
 }
 

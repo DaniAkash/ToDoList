@@ -8,7 +8,8 @@ export function addTask(task) {
     task: Immutable.Map({
       id: uuid.v4(),
       task,
-      status: false,
+      isComplete: false,
+      isBeingEdited: false,
     }),
   };
 }
