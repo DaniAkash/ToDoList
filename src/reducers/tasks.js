@@ -8,6 +8,16 @@ export default function tasks(state = Immutable.List(initialState.tasks), action
     case actions.ADD_TASK:
       return state.push(action.task);
 
+    case actions.CHANGE_STATUS:
+      return state.update(
+        state.findIndex(task => {
+          return task.get('id') === action.task.get('id');
+        }),
+        () => {
+          return action.task;
+        }
+      );
+
     default:
       return state;
   }

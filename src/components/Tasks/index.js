@@ -23,6 +23,11 @@ class Tasks extends Component{
     this.addTask = this.addTask.bind(this);
     this.onTextInput = this.onTextInput.bind(this);
     this.onClickSave = this.onClickSave.bind(this);
+    this.changeStatus = this.changeStatus.bind(this);
+  }
+
+  changeStatus(task) {
+    this.props.taskActions.changeStatus(task);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -49,6 +54,7 @@ class Tasks extends Component{
   }
 
   render() {
+    let that = this;
     return (
       <div className="App-body">
         <div className="tasks-area">
@@ -57,7 +63,13 @@ class Tasks extends Component{
           {
             this.props.tasks.map(task => {
               task = task.toObject();
-              return <Task key={task.id} task={task} />;
+              return (
+                <Task
+                  key={task.id}
+                  task={task}
+                  changeStatus={that.changeStatus}
+                />
+              );
             })
           }
           {/*<div className="tasks">

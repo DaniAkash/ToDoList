@@ -13,3 +13,11 @@ export function addTask(task) {
     }),
   };
 }
+
+export function changeStatus(task) {
+  task.isComplete = !task.isComplete;
+  return {
+    type: actions.CHANGE_STATUS,
+    task: Immutable.Map(task),
+  };
+}

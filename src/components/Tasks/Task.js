@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Tasks = ({task}) => {
+const Tasks = ({task, changeStatus}) => {
   return (
     <div className={"tasks " + (task.isComplete? "complete": "")}>
       <div className="tasks-checkbox-div">
-        <input type="checkbox" value="1" id={`tasksCheckBox${task.id}`} name="" />
+        <input type="checkbox" value="1" id={`tasksCheckBox${task.id}`} onChange={() => changeStatus(task)} />
         <label htmlFor={`tasksCheckBox${task.id}`}></label>
       </div>
       {
