@@ -24,10 +24,15 @@ class Tasks extends Component{
     this.onTextInput = this.onTextInput.bind(this);
     this.onClickSave = this.onClickSave.bind(this);
     this.changeStatus = this.changeStatus.bind(this);
+    this.changeEditedTask = this.changeEditedTask.bind(this);
   }
 
   changeStatus(task) {
     this.props.taskActions.changeStatus(task);
+  }
+
+  changeEditedTask(task) {
+    this.props.taskActions.changeEditedTask(task);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -68,6 +73,7 @@ class Tasks extends Component{
                   key={task.id}
                   task={task}
                   changeStatus={that.changeStatus}
+                  changeEditedTask={that.changeEditedTask}
                 />
               );
             })

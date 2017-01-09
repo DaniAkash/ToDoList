@@ -21,3 +21,11 @@ export function changeStatus(task) {
     task: Immutable.Map(task),
   };
 }
+
+export function changeEditedTask(task) {
+  task.isBeingEdited = !task.isBeingEdited;
+  return {
+    type: actions.CHANGE_EDITED_TASK,
+    task: Immutable.Map(task),
+  };
+}
